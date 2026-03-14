@@ -1,0 +1,66 @@
+/* Pure, unstyled cruelty */
+#challenge-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Prevents scrollbars when the button jumps to edges */
+  background-color: #f0f0f0; 
+}
+
+#ghost-button {
+  position: absolute;
+  padding: 2px 5px; /* Tiny target area */
+  font-size: 10px;
+  cursor: pointer;
+  /* Starting position */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* The Escalation Punishment */
+body.escalate {
+  animation: flash 0.1s infinite;
+}
+
+@keyframes flash {
+  0% { background-color: #ff0000; } /* Red */
+  33% { background-color: #ffffff; } /* White */
+  66% { background-color: #000000; } /* Black */
+  100% { background-color: #ff0000; } /* Red */
+}
+#challenge-container {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 20vh;
+}
+
+#target-phrase {
+  color: #ff0000;
+  letter-spacing: 2px;
+}
+
+#panic-input {
+  font-size: 24px;
+  padding: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 3px solid #000;
+  outline: none;
+}
+
+/* The visual punishment for a typo */
+.error-shake {
+  animation: shake 0.2s;
+  border-color: #ff0000 !important;
+  background-color: #ffe6e6;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
